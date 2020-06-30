@@ -99,34 +99,75 @@ textarea {
 html {
   background-color: #233c56;
   height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  padding: 0em 2em;
   font-size: 1.25em;
   height: 100%;
-}
-
-.wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-}
-
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
-  border: 2px dotted;
   display: flex;
   justify-content: center;
-  line-height: 1.2em;
+}
+
+header,
+footer {
+  background-color: #233c56;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+header h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 3em;
+}
+
+main {
+  background-color: #233c56;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%
+}
+
+main p {
+  font-size: 1.35em;
+}
+
+p span {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+.flex-container {
+  /*add display:flex and set justify-content to space-between*/
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+.flex-items {
+  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
+  display: flex;
+  justify-content: center;
+  line-height: 1.6em;
   align-items: center;
   font-size: 1.0em;
   background-color: #233c56;
-  height: 300px;
-  width: 30%;
+  border-bottom: 2px solid #555;
+}
+
+footer {
+  border-top: 2px solid #fff;
+}
+
+footer img {
+  padding: 30px 20px 0 0;
 }
 
 
@@ -205,6 +246,30 @@ body {
 .clearfix:after {
     clear: both;
 }
+
+/* Media Queries for Responsive Design */
+
+@media (min-width: 1200px) {
+  .flex-items {
+    flex-basis: 30%;
+    border-bottom: none;
+  }
+
+  #div-2 p {
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  footer img {
+    height: auto;
+    width: 100%;
+  }
+
+}
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
